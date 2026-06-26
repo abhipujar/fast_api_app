@@ -22,3 +22,19 @@
     middleware ->  request processing pipeline 
     schema ->      pydantic models for validation
  -->
+
+ # database 
+ ## relational database
+ # mysql
+ # postgresql
+ # sqlite
+ # sql server
+
+ <!-- # constraints in database
+ primary key :->eg. student id 
+ foreign key :->dept_id in student table
+ unique      :->eg. phone number
+ not null     :-> eg. name
+ check        :-> eg. salary>0
+ default   :-> 
+ -->
