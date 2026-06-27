@@ -38,4 +38,4 @@
  check        :-> eg. salary>0
  default   :-> 
  -->
- student_db-> database
+ <!-- student_db-> database -->
