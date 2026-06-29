@@ -39,3 +39,8 @@
  default   :-> 
  -->
  <!-- student_db-> database -->
+ # day-4
+<!-- 
+ pip install alembic
+ pip freeze requirements.txt
+ alembic init alembic -->
