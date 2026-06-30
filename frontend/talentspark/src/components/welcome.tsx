@@ -1,6 +1,17 @@
+import { count } from "console";
+import {useState} from "react";
+
 function Welcome() {
+  const [name, setName] = useState("");
+  const increment = () => {
+    setCount(count + 1);
+  }
+
   return (
-      <h1>Welcome to talentspark</h1>
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={increment}>Increment</button>
+    </div>
   )
 }
 export default Welcome

@@ -1,2 +1,4 @@
-*.pyc
-env #restiction virtual environment from github
+*.pyc*.pyc
+env
+node_moduls
+#env #restiction virtual environment from github

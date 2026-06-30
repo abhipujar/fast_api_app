@@ -39,8 +39,22 @@
  default   :-> 
  -->
  <!-- student_db-> database -->
- # day-4
+ <!-- # day-4 -->
 <!-- 
  pip install alembic
  pip freeze requirements.txt
  alembic init alembic -->
+ #javascript->ES6->
+
+ <!-- npm install vite@letest
+ node -v , npm -v
+ npm install -g typescript
+ npm create vite@latest talentspark
+ react -> typescript -> e....
+
+npm install axios
+
+ui -> axios -> localhost:8000 ->fastapi -> db -> useeffect -> setstate -> rerender -> ui -->
+<!-- useeffect -> which is used to call the api or which is used to fetch the data from the api automatically when the page is loaded
+
+usestate -> which is used to store the data in the companent and which will update then companent when the data is updated or changed -->
