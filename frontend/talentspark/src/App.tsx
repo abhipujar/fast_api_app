@@ -1,52 +1,63 @@
-import Welcome from './components/welcome';
-import NavBar from './components/NavBar';
-import CompanyCard from './components/CompanyCard';
-import JobCard from './components/JobCard';
-import Footer from './components/footer';
-import type { Company } from './types/Company';
-import {getCompanies} from './Services/CompanyServices';
-import { useEffect, useState } from 'react';
+// import Welcome from "./components/Welcome";
+import NavBar from "./components/NavBar";
+import CompanyCard from "./components/CompanyCard";
+import JobCard from "./components/JobCard";
+import Footer from "./components/footer";
+import { useEffect, useState } from "react";
+import { getCompanies } from "./Services/CompanyServices";
+import type { Company } from "./types/company";
 
-function App() {
+function App(){
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
   const [companies, setCompanies] = useState<Company[]>([]);
-  const [error,seterror] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  async function fetchCompanies() {
-    setLoading(true);
-    try {
-      const companies = await getCompanies();
-      setCompanies(companies);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
 
   useEffect(() => {
+    let isMounted = true;
+
+    const fetchCompanies = async () => {
+      setLoading(true);
+      try {
+        const data = await getCompanies();
+        if (isMounted) {
+          setCompanies(data);
+        }
+      } catch (err) {
+        if (isMounted) {
+          setError(err as Error);
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
+
     fetchCompanies();
-    
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
-  if (loading) {
-    return <div>Loading...</div>;
+  
+  if(loading){
+    return <div>Loading...</div>
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
+  if(error){
+    return <div>Error: {error.message}</div>
   }
-
-  return (
-      <>
-          <NavBar />
-          <Welcome />
-          <br />
-            <CompanyCard key={companies_id}
-            companies={companies}/>
-          
-          <JobCard />
-          <Footer />
-      </>
+  
+  return(
+    <>
+    <NavBar />
+    {/* <Welcome /> */}
+    <br />
+    <CompanyCard  
+    companies={companies}/>
+    <JobCard />
+    <Footer />
+    </>
   )
 }
-
 export default App

@@ -1,10 +1,10 @@
-import type {job} from './job';
-interface Company{
+// import type {job} from './job';
+interface Job {
     id: number;
     name: string;
     address: string;
     phone: string;
     location: string;
-    jobs: job[];
+   
 }
-export type {Company}
+export type {Job}
