@@ -53,8 +53,7 @@ function App(){
     <NavBar />
     {/* <Welcome /> */}
     <br />
-    <CompanyCard  
-    companies={companies}/>
+    <CompanyCard companies={companies} />
     <JobCard />
     <Footer />
     </>
