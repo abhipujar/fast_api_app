@@ -58,3 +58,6 @@ ui -> axios -> localhost:8000 ->fastapi -> db -> useeffect -> setstate -> rerend
 <!-- useeffect -> which is used to call the api or which is used to fetch the data from the api automatically when the page is loaded
 
 usestate -> which is used to store the data in the companent and which will update then companent when the data is updated or changed -->
+
+#promise ->which is used to handle the asynchronous operations 
+#asynv /await -> which is used to handle the asyncronous opeartions in a synchronous way
