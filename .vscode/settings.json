@@ -1,0 +1,9 @@
+{
+  "python.analysis.extraPaths": [
+    "./backend"
+  ],
+  "python.analysis.packageIndexDepths": {
+    "backend": 4
+  },
+  "python.defaultInterpreterPath": "C:\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
+}
