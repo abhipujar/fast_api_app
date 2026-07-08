@@ -11,9 +11,17 @@ app.add_middleware(
     allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"]
 )
 # Base.metadata.create_all(bind=engine)
+
+@app.on_event("startup")
+async def startup_event():
+    from database import engine
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+
+
 app.include_router(auth.router)
 app.include_router(company.router)
 app.include_router(job.router)
